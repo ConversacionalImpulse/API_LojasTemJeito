@@ -26,7 +26,7 @@ export async function createData(req, res) {
             bloco03radio02
         );
     
-        res.status(200).json({ message: "Sucess", oportunit });
+        res.status(200).json({ message: "Success" });
         
     } catch (err) {
       console.log(err);
