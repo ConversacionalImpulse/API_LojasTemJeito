@@ -19,7 +19,7 @@ export async function createRecordTable (
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: process.env.AUTH_PIPEFY,
+            "Authorization": process.env.AUTH_PIPEFY,
         },
         body: JSON.stringify({
             "query": `mutation { createTableRecord (input: {table_id:${tableId}  fields_attributes: [
