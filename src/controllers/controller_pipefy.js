@@ -25,7 +25,7 @@ export async function createData(req, res) {
             bloco03radio01,
             bloco03radio02
         );
-    
+
         res.status(200).json({ message: "Success" });
         
     } catch (err) {

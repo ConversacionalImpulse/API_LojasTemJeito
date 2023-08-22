@@ -1,4 +1,4 @@
-import crypto from 'node:crypto';
+//import crypto from 'node:crypto';
 
 export async function createRecordTable (
     bloco01radio01,
@@ -10,9 +10,9 @@ export async function createRecordTable (
     bloco03radio02) {
     
     const tableId = "301721975"
-    const idUnique = crypto.randomUUID()
+    //const idUnique = crypto.randomUUID()
     
-    const recordTable = await fetch("https://api.pipefy.com/graphql", {
+        const recordTable = await fetch("https://api.pipefy.com/graphql", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -26,12 +26,13 @@ export async function createRecordTable (
                             {field_id: "nota_atendimento", field_value: "${bloco02radio01}"},
                             {field_id: "identifica_o_da_equipe", field_value: "${bloco02radio02}"},
                             {field_id: "nota_loja", field_value: "${bloco03radio01}"},
-                            {field_id: "loja", field_value: "${bloco03radio02}"},
-                            {field_id: "id", field_value: "${idUnique}"}
-                        ] }) { table_record { id }}}`,
+                            {field_id: "loja", field_value: "${bloco03radio02}"}
+                            ] }) { table_record { id }}}`
         }),
     });
+
     const data = await recordTable.json();
     //console.log("ID: ", data.data?.createTableRecord?.table_record?.id)
+    console.log(data)
     return {idRecord: data.data?.createTableRecord?.table_record?.id}
 }
