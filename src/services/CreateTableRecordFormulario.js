@@ -1,4 +1,3 @@
-//import crypto from 'node:crypto';
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -13,9 +12,8 @@ export async function createRecordTable (
     bloco03radio02) {
     
     const tableId = "303574010"
-    //const idUnique = crypto.randomUUID()
     
-        const recordTable = await fetch("https://api.pipefy.com/graphql", {
+        await fetch("https://api.pipefy.com/graphql", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -34,8 +32,4 @@ export async function createRecordTable (
         }),
     });
 
-    const data = await recordTable.json();
-    //console.log("ID: ", data.data?.createTableRecord?.table_record?.id)
-    console.log(data)
-    return {idRecord: data.data?.createTableRecord?.table_record?.id}
 }

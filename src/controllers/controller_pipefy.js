@@ -4,7 +4,6 @@ import { createRecordTable } from "../services/CreateTableRecordFormulario.js";
 dotenv.config();
 
 export async function createData(req, res) {
-    console.log("PreInicio")
     
     let {
         bloco01radio01,
@@ -26,35 +25,16 @@ export async function createData(req, res) {
             bloco03radio01,
             bloco03radio02
         );
-
-        console.log("Inicio")
-
-        res.status(200).json({ message: "Success" });
-
-        /*if (record) {
-            // Coloca um console.log para vê se chega nessa parte aqui
-            console.log("Oi")
-            const postResponse = await fetch('api-media-total-tem-jeito.vercel.app/medias', {
+            
+            await fetch('https://api-media-total-tem-jeito.vercel.app/medias', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            console.log("A requisição foi")
-            if (postResponse.ok) {
-                const postData = await postResponse.json();
-                console.log("Response data:", postData);
-                res.status(200).json({ message: "Success" });
-            } else {
-                console.error("POST request failed:", postResponse.statusText);
-                res.status(500).json({ message: "Error in POST request" });
-            }
-            console.log("log se deu certo")
-        } else {
-            res.status(500).json({ message: "Error creating record" });
-        }
 
-        console.log("ultimo log")*/
+            res.status(200).json({message: "Resgistro criado", medias: "As médias foram atualizadas" })
+            
         
     } catch (err) {
         console.log(err);
