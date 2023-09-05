@@ -29,7 +29,9 @@ export async function createData(req, res) {
 
         console.log("Inicio")
 
-        if (record) {
+        res.status(200).json({ message: "Success" });
+
+        /*if (record) {
             // Coloca um console.log para vê se chega nessa parte aqui
             console.log("Oi")
             const postResponse = await fetch('api-media-total-tem-jeito.vercel.app/medias', {
@@ -52,7 +54,7 @@ export async function createData(req, res) {
             res.status(500).json({ message: "Error creating record" });
         }
 
-        console.log("ultimo log")
+        console.log("ultimo log")*/
         
     } catch (err) {
         console.log(err);

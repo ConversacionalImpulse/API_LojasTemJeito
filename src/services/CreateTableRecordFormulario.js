@@ -27,7 +27,7 @@ export async function createRecordTable (
                             {field_id: "identifica_o_com_o_servi_o", field_value: "${bloco01radio02}"},
                             {field_id: "chance_de_continuar_com_o_servi_o", field_value: "${bloco01radio03}"}, 
                             {field_id: "nota_atendimento", field_value: "${bloco02radio01}"},
-                            {field_id: "identifica_o_com_a_equipe"", field_value: "${bloco02radio02}"},
+                            {field_id: "identifica_o_com_a_equipe", field_value: "${bloco02radio02}"},
                             {field_id: "nota_estrutura_da_loja", field_value: "${bloco03radio01}"},
                             {field_id: "loja", field_value: "${bloco03radio02}"}
                             ] }) { table_record { id }}}`
